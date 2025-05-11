@@ -677,6 +677,13 @@ async def reload(ctx: commands.Context[Barry]):
     await ctx.bot.loader()
     await ctx.reply("Reloaded")
 
+@bot.tree.command(name="src")
+async def src(interaction: discord.Interaction[Barry]):
+    await interaction.response.send_message(
+	content="Barry is transitioning to be an open-sourced project. This application, and the idea I had when I created it, are the result of inspiration from apps alike. It is *astonishing* how much I've learned from a singular bot that was originally intended to replace Atlas custom commands. Since Barry 2's creation, back in December of 2023, one thing has been clear: do what other applications won't give you.\n\nBy making my project open-source—under MIT license—I hope to inspire and educate those who take interest in applications alike.\n\nThis repository does include everything Barry has—in fact, it's barely touching the surface. Over time, I will add modules and other miscellaneous files until the entire project has been uploaded.\n-# :robot: https://github.com/sactemps/Barry-CRP2",
+        ephemeral=True
+    )
+
 if __name__ == '__main__':
     TOKEN = os.getenv('BOT_TOKEN')
     bot.run(TOKEN)
